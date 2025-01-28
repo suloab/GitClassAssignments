@@ -1,0 +1,165 @@
+//get names from Case Info
+
+List<Excel_Spreadsheet__c> listStrNamesP0 = [SELECT Plaintiff__c, It_s_Complicated__c
+                               FROM Excel_Spreadsheet__c
+                               WHERE Plaintiff__c != 'pro se' 
+                               AND Plaintiff__c != null
+                               AND It_s_Complicated__c = FALSE];
+    
+List<Excel_Spreadsheet__c> listStrNamesP1 = [SELECT P_1__c, It_s_Complicated__c
+                               FROM Excel_Spreadsheet__c
+                               WHERE P_1__c != 'pro se' 
+                               AND P_1__c != null
+                               AND It_s_Complicated__c = FALSE];
+
+List<Excel_Spreadsheet__c> listStrNamesP2 = [SELECT P_2__c, It_s_Complicated__c
+                               FROM Excel_Spreadsheet__c
+                               WHERE P_2__c != 'pro se' 
+                               AND P_2__c != null
+                               AND It_s_Complicated__c = FALSE];
+
+List<Excel_Spreadsheet__c> listStrNamesP3 = [SELECT P_3__c, It_s_Complicated__c
+                                             FROM Excel_Spreadsheet__c
+                                             WHERE P_3__c != 'pro se' 
+                              				 AND P_3__c != null
+                               				 AND It_s_Complicated__c = FALSE];
+
+List<Excel_Spreadsheet__c> listStrNamesP4 = [SELECT P_4__c, It_s_Complicated__c
+                                             FROM Excel_Spreadsheet__c
+                                            WHERE P_4__c != 'pro se' 
+                                   			AND P_4__c != null
+                               				AND It_s_Complicated__c = FALSE];
+
+
+List<Excel_Spreadsheet__c> listStrNamesP5 = [SELECT P_5__c, It_s_Complicated__c
+                                             FROM Excel_Spreadsheet__c
+                                             WHERE P_5__c != 'pro se' 
+                               				 AND P_5__c != null
+                               				 AND It_s_Complicated__c = FALSE];
+
+List<Excel_Spreadsheet__c> listStrNamesP6 = [SELECT P_6__c, It_s_Complicated__c
+                                             FROM Excel_Spreadsheet__c
+                                             WHERE P_6__c != 'pro se' 
+                               				 AND P_6__c != null
+                               				 AND It_s_Complicated__c = FALSE];
+        
+List<Excel_Spreadsheet__c> listStrNamesD0 = [SELECT Defendant__c, It_s_Complicated__c
+                               FROM Excel_Spreadsheet__c
+                               WHERE Defendant__c != 'pro se' 
+                               AND Defendant__c != null
+                               AND It_s_Complicated__c = FALSE];  
+        
+List<Excel_Spreadsheet__c> listStrNamesD1 = [SELECT D_1__c, It_s_Complicated__c
+                               FROM Excel_Spreadsheet__c
+                               WHERE D_1__c != 'pro se' 
+                               AND D_1__c != null
+                               AND It_s_Complicated__c = FALSE];
+
+List<Excel_Spreadsheet__c> listStrNamesD2 = [SELECT D_2__c, It_s_Complicated__c
+                               FROM Excel_Spreadsheet__c
+                               WHERE D_2__c != 'pro se' 
+                               AND D_2__c != null
+                               AND It_s_Complicated__c = FALSE];
+
+List<Excel_Spreadsheet__c> listStrNamesD3 = [SELECT D_3__c, It_s_Complicated__c
+                                             FROM Excel_Spreadsheet__c
+                                             WHERE D_3__c != 'pro se' 
+                              				 AND D_3__c != null
+                               				 AND It_s_Complicated__c = FALSE];
+
+List<Excel_Spreadsheet__c> listStrNamesD4 = [SELECT D_4__c, It_s_Complicated__c
+                                             FROM Excel_Spreadsheet__c
+                                            WHERE D_4__c != 'pro se' 
+                                   			AND D_4__c != null
+                               				AND It_s_Complicated__c = FALSE];
+
+
+List<Excel_Spreadsheet__c> listStrNamesD5 = [SELECT D_5__c, It_s_Complicated__c
+                                             FROM Excel_Spreadsheet__c
+                                             WHERE D_5__c != 'pro se' 
+                               				 AND D_5__c != null
+                               				 AND It_s_Complicated__c = FALSE];
+
+List<Excel_Spreadsheet__c> listStrNamesD6 = [SELECT D_6__c, It_s_Complicated__c
+                                             FROM Excel_Spreadsheet__c
+                                             WHERE D_6__c != 'pro se' 
+                               				 AND D_6__c != null
+                               				 AND It_s_Complicated__c = FALSE];
+//convert to String type
+    
+List<String> listStrFinal = new List<String>();
+	for (Excel_Spreadsheet__c exSpObj : listStrNamesP0) {
+		String attyName = (String)exSpObj.get('Plaintiff__c');
+    	listStrFinal.add(attyName);
+	}
+        
+        for (Excel_Spreadsheet__c exSpObj : listStrNamesP1) {
+		String attyName = (String)exSpObj.get('P_1__c');
+    	listStrFinal.add(attyName);
+	}
+        for (Excel_Spreadsheet__c exSpObj : listStrNamesP2) {
+		String attyName = (String)exSpObj.get('P_2__c');
+    	listStrFinal.add(attyName);
+	}
+        for (Excel_Spreadsheet__c exSpObj : listStrNamesP3) {
+		String attyName = (String)exSpObj.get('P_3__c');
+    	listStrFinal.add(attyName);
+	}
+        for (Excel_Spreadsheet__c exSpObj : listStrNamesP4) {
+		String attyName = (String)exSpObj.get('P_4__c');
+    	listStrFinal.add(attyName);
+	}
+        for (Excel_Spreadsheet__c exSpObj : listStrNamesP5) {
+		String attyName = (String)exSpObj.get('P_5__c');
+    	listStrFinal.add(attyName);
+	}
+        for (Excel_Spreadsheet__c exSpObj : listStrNamesP6) {
+		String attyName = (String)exSpObj.get('P_6__c');
+    	listStrFinal.add(attyName);
+	}
+        for (Excel_Spreadsheet__c exSpObj : listStrNamesD0) {
+		String attyName = (String)exSpObj.get('Defendant__c');
+    	listStrFinal.add(attyName);
+	}
+        for (Excel_Spreadsheet__c exSpObj : listStrNamesD1) {
+		String attyName = (String)exSpObj.get('D_1__c');
+    	listStrFinal.add(attyName);
+	}
+        for (Excel_Spreadsheet__c exSpObj : listStrNamesD2) {
+		String attyName = (String)exSpObj.get('D_2__c');
+    	listStrFinal.add(attyName);
+	}
+        for (Excel_Spreadsheet__c exSpObj : listStrNamesD3) {
+		String attyName = (String)exSpObj.get('D_3__c');
+    	listStrFinal.add(attyName);
+	}
+        for (Excel_Spreadsheet__c exSpObj : listStrNamesD4) {
+		String attyName = (String)exSpObj.get('D_4__c');
+    	listStrFinal.add(attyName);
+	}
+        for (Excel_Spreadsheet__c exSpObj : listStrNamesD5) {
+		String attyName = (String)exSpObj.get('D_5__c');
+    	listStrFinal.add(attyName);
+	}
+        for (Excel_Spreadsheet__c exSpObj : listStrNamesD6) {
+		String attyName = (String)exSpObj.get('D_6__c');
+    	listStrFinal.add(attyName);
+	}
+        
+
+
+//dedupe
+Set<String> setStrFinal = new Set<String> (listStrFinal);
+
+//build records
+
+List<Attorney__c> listAtty = new List<Attorney__c>();
+
+for (String nameAtty : setStrFinal) {
+    Attorney__c atty = new Attorney__c();
+  	atty.Name = nameAtty;
+	listAtty.add(atty);
+}
+
+//DML
+insert listAtty;
